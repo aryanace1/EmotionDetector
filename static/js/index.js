@@ -32,23 +32,26 @@ function takeSnapshot() {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext("2d").drawImage(video, 0, 0);
-    canvas.toBlob(sendSnapshot, "image/jpeg");
+    let imageData = canvas.toDataURL("image/jpeg", 1.0);
+    sendSnapshot(imageData);
   }
 }
 
 // Send the snapshot to the Flask server.
-function sendSnapshot(blob) {
-  // Create a new form data object and add the snapshot to it.
-  let formData = new FormData();
-  formData.append("image", blob, "snapshot.jpg");
-
+function sendSnapshot(imageData) {
   // Send the form data to the server.
-  fetch("/", {
+  fetch("/snapImage", {
     method: "POST",
-    body: formData,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: "imageData=" + encodeURIComponent(imageData),
   })
     .then(function (response) {
-      console.log("Image sent to server.");
+      return response.json();
+    })
+    .then(function (json) {
+      console.log("Prediction: " + json.prediction);
     })
     .catch(function (error) {
       console.error("Error sending image to server: " + error);

@@ -14,24 +14,18 @@
   </head>
 
   <body>
+    <h1>Emotion Detector</h1>
+    {% if result %}
+    <div>
+      <p>Prediction: {{ result.prediction }}</p>
+      <img src="data:image/png;base64,{{ result.image }}" alt="Image" />
+    </div>
+    {% endif %}
+
     <button onclick="startWebcam()">Play</button>
     <button onclick="stopWebcam()">Close</button>
     <button onclick="takeSnapshot()">Snap</button>
     <video id="videoElement"></video>
-
-    {% if result %}
-    <h1>{{ result.prediction }}</h1>
-    <img
-      src="data:image/jpeg;base64,{{ result.image }}"
-      alt="Original Image"
-      style="max-width: 100%; height: auto"
-    />
-    {% endif %}
-
-    <!-- Error -->
-    {% if error %}
-    <h1>{{ error }}</h1>
-    {% endif %}
 
     <!-- Custom JS -->
     <script

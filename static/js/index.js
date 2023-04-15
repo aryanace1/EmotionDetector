@@ -54,9 +54,16 @@ function sendSnapshot(imageData) {
     .then(function (json) {
       console.log("Prediction: " + json.prediction);
       resultDiv.innerHTML = "<p>Prediction: " + json.prediction + "</p>";
-      let image = document.createElement("img");
-      image.src = imageData;
-      document.getElementById("imageDiv").appendChild(image);
+      let image = document.querySelector("#imageDiv img");
+      if (image) {
+        // If an image already exists, update its source.
+        image.src = imageData;
+      } else {
+        // If no image exists, create a new one.
+        image = document.createElement("img");
+        image.src = imageData;
+        document.getElementById("imageDiv").appendChild(image);
+      }
     })
     .catch(function (error) {
       console.error("Error sending image to server: " + error);

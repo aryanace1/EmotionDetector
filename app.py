@@ -41,10 +41,11 @@ def snapImage():
 
     # Convert the image data to a numpy array
     nparr = np.frombuffer(image_data, np.uint8)
-    img = cv2.imdecode(nparr, cv2.IMREAD_GRAYSCALE)
+    img_grey = cv2.imdecode(nparr, cv2.IMREAD_GRAYSCALE)
+    normal_img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
     # Detect the face in the image
-    faces = face_cascade.detectMultiScale(img, 1.3, 5)
+    faces = face_cascade.detectMultiScale(img_grey, 1.3, 5)
 
     if len(faces) == 0:
         return jsonify({'prediction': 'no face detected'})
@@ -54,14 +55,14 @@ def snapImage():
 
     # Draw a rectangle around the face
     img_with_rect = cv2.rectangle(
-        img.copy(), (x, y), (x+w, y+h), (0, 255, 0), 2)
+        normal_img.copy(), (x, y), (x+w, y+h), (0, 255, 0), 2)
 
     # Crop the image to the face
-    img = img[y:y+h, x:x+w]
+    img_grey = img_grey[y:y+h, x:x+w]
 
     # Resize the image and convert it to an array
-    img = cv2.resize(img, (48, 48))
-    img_array = img_to_array(img)
+    img_grey = cv2.resize(img_grey, (48, 48))
+    img_array = img_to_array(img_grey)
     img_array = img_array.reshape(
         (1, img_array.shape[0], img_array.shape[1], 1))
 

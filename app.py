@@ -44,6 +44,9 @@ def snapImage():
     img_grey = cv2.imdecode(nparr, cv2.IMREAD_GRAYSCALE)
     normal_img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
+    # Convert normal image to RGB
+    normal_img = cv2.cvtColor(normal_img, cv2.COLOR_BGR2RGB)
+
     # Detect the face in the image
     faces = face_cascade.detectMultiScale(img_grey, 1.3, 5)
 

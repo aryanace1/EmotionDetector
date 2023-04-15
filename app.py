@@ -5,8 +5,13 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array, load_img
 import PIL
 import io
+import cv2
 
 app = Flask(__name__)
+
+face_cascade = cv2.CascadeClassifier(
+    "./static/xml/haarcascade_frontalface_default.xml")
+
 
 model = load_model("./static/models/emotion_detector_1681572728.3088243.h5")
 class_names = {
@@ -33,10 +38,21 @@ def snapImage():
 
     # Decode the image data
     image_data = base64.b64decode(image_data.split(',')[1])
-    img = PIL.Image.open(io.BytesIO(image_data)).convert('L')
+
+    # Convert the image data to a numpy array
+    nparr = np.frombuffer(image_data, np.uint8)
+    img = cv2.imdecode(nparr, cv2.IMREAD_GRAYSCALE)
+
+    # Detect the face in the image
+    faces = face_cascade.detectMultiScale(img, 1.3, 5)
+
+    # Crop the image to the face
+    for (x, y, w, h) in faces:
+        img = img[y:y+h, x:x+w]
+        break
 
     # Resize the image and convert it to an array
-    img = img.resize((48, 48))
+    img = cv2.resize(img, (48, 48))
     img_array = img_to_array(img)
     img_array = img_array.reshape(
         (1, img_array.shape[0], img_array.shape[1], 1))

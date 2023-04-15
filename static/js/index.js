@@ -54,6 +54,8 @@ function sendSnapshot(imageData) {
     .then(function (json) {
       console.log("Prediction: " + json.prediction);
       resultDiv.innerHTML = "<p>Prediction: " + json.prediction + "</p>";
+
+      // Display the original image
       let image = document.querySelector("#imageDiv img");
       if (image) {
         // If an image already exists, update its source.
@@ -63,6 +65,20 @@ function sendSnapshot(imageData) {
         image = document.createElement("img");
         image.src = imageData;
         document.getElementById("imageDiv").appendChild(image);
+      }
+
+      // Display the predicted image
+      let predictedImage = document.querySelector("#predictedImageDiv img");
+      if (predictedImage) {
+        // If a predicted image already exists, update its source.
+        predictedImage.src = "data:image/jpeg;base64," + json.imageData;
+      } else {
+        // If no predicted image exists, create a new one.
+        predictedImage = document.createElement("img");
+        predictedImage.src = "data:image/jpeg;base64," + json.imageData;
+        document
+          .getElementById("predictedImageDiv")
+          .appendChild(predictedImage);
       }
     })
     .catch(function (error) {

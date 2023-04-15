@@ -46,10 +46,18 @@ def snapImage():
     # Detect the face in the image
     faces = face_cascade.detectMultiScale(img, 1.3, 5)
 
+    if len(faces) == 0:
+        return jsonify({'prediction': 'no face detected'})
+
+    # Get the first face detected
+    (x, y, w, h) = faces[0]
+
+    # Draw a rectangle around the face
+    img_with_rect = cv2.rectangle(
+        img.copy(), (x, y), (x+w, y+h), (0, 255, 0), 2)
+
     # Crop the image to the face
-    for (x, y, w, h) in faces:
-        img = img[y:y+h, x:x+w]
-        break
+    img = img[y:y+h, x:x+w]
 
     # Resize the image and convert it to an array
     img = cv2.resize(img, (48, 48))
@@ -61,7 +69,16 @@ def snapImage():
     predicted_class = np.argmax(prediction)
     predicted_emotion = class_names[predicted_class]
 
-    response = {'prediction': predicted_emotion}
+    # Write the predicted emotion on the image
+    img_with_text = cv2.putText(img_with_rect, predicted_emotion, (x, y-10),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+
+    # Convert the image to a JPEG string
+    img_buffer = io.BytesIO()
+    PIL.Image.fromarray(img_with_text).save(img_buffer, format="JPEG")
+    img_str = base64.b64encode(img_buffer.getvalue()).decode()
+
+    response = {'prediction': predicted_emotion, 'imageData': img_str}
 
     return jsonify(response)
 

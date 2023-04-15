@@ -15,13 +15,9 @@
 
   <body>
     <h1>Emotion Detector</h1>
-    {% if result %}
-    <div>
-      <p>Prediction: {{ result.prediction }}</p>
-      <img src="data:image/png;base64,{{ result.image }}" alt="Image" />
-    </div>
-    {% endif %}
+    <h2>Take a picture and detect your emotion</h2>
 
+    <div id="imageDiv"></div>
     <div id="resultDiv"></div>
 
     <button onclick="startWebcam()">Play</button>

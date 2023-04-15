@@ -54,6 +54,9 @@ function sendSnapshot(imageData) {
     .then(function (json) {
       console.log("Prediction: " + json.prediction);
       resultDiv.innerHTML = "<p>Prediction: " + json.prediction + "</p>";
+      let image = document.createElement("img");
+      image.src = imageData;
+      document.getElementById("imageDiv").appendChild(image);
     })
     .catch(function (error) {
       console.error("Error sending image to server: " + error);

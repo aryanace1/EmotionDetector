@@ -2,6 +2,7 @@ let video = document.getElementById("videoElement");
 let canvas = document.createElement("canvas");
 let stream = null;
 
+// Start the webcam when the "Play" button is clicked.
 function startWebcam() {
   navigator.mediaDevices
     .getUserMedia({ video: true })
@@ -15,6 +16,7 @@ function startWebcam() {
     });
 }
 
+// Stop the webcam when the "Stop" button is clicked.
 function stopWebcam() {
   if (stream != null) {
     video.pause();
@@ -24,6 +26,7 @@ function stopWebcam() {
   }
 }
 
+// Take a snapshot when the "Snap" button is clicked.
 function takeSnapshot() {
   if (stream != null) {
     canvas.width = video.videoWidth;
@@ -33,9 +36,13 @@ function takeSnapshot() {
   }
 }
 
+// Send the snapshot to the Flask server.
 function sendSnapshot(blob) {
+  // Create a new form data object and add the snapshot to it.
   let formData = new FormData();
   formData.append("image", blob, "snapshot.jpg");
+
+  // Send the form data to the server.
   fetch("/", {
     method: "POST",
     body: formData,

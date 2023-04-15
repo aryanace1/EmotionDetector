@@ -1,6 +1,7 @@
 let video = document.getElementById("videoElement");
 let canvas = document.createElement("canvas");
 let stream = null;
+let resultDiv = document.getElementById("resultDiv");
 
 // Start the webcam when the "Play" button is clicked.
 function startWebcam() {
@@ -52,6 +53,7 @@ function sendSnapshot(imageData) {
     })
     .then(function (json) {
       console.log("Prediction: " + json.prediction);
+      resultDiv.innerHTML = "<p>Prediction: " + json.prediction + "</p>";
     })
     .catch(function (error) {
       console.error("Error sending image to server: " + error);

@@ -99,7 +99,8 @@ function sendSnapshot(imageData) {
       if (json.prediction == "no face detected") {
         let p = document.querySelector("#predictedImageDiv p");
 
-        no_face_text = "No face detected. Please show your face in the camera.";
+        let no_face_text =
+          "No face detected. Please show your face in the camera.";
 
         if (p) {
           // If a paragraph already exists, update its text.
@@ -109,6 +110,12 @@ function sendSnapshot(imageData) {
           p = document.createElement("p");
           p.innerHTML = no_face_text;
           document.getElementById("predictedImageDiv").appendChild(p);
+        }
+      } else {
+        // If a paragraph exists, remove it.
+        let p = document.querySelector("#predictedImageDiv p");
+        if (p) {
+          p.remove();
         }
       }
     })

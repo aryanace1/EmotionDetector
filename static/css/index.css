@@ -205,7 +205,7 @@ ol.gradient-list > li::before {
   content: counter(gradient-counter);
   color: #1d1f20;
   display: flex;
-  font: 900 1.5em/1 "Montserrat";
+  font-family: "Rubik", sans-serif;
   justify-content: flex-end;
   padding: 0.125em 0.25em;
   z-index: 1;

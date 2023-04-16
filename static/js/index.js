@@ -89,6 +89,21 @@ function sendSnapshot(imageData) {
           .getElementById("predictedImageDiv")
           .appendChild(predictedImage);
       }
+
+      // If no face detected, display a paragraph with message "No face detected".
+      if (json.prediction == "no face detected") {
+        let p = document.querySelector("#predictedImageDiv p");
+
+        if (p) {
+          // If a paragraph already exists, update its text.
+          p.innerHTML = "No face detected";
+        } else {
+          // If no paragraph exists, create a new one.
+          p = document.createElement("p");
+          p.innerHTML = "No face detected";
+          document.getElementById("predictedImageDiv").appendChild(p);
+        }
+      }
     })
     .catch(function (error) {
       console.error("Error sending image to server: " + error);

@@ -294,6 +294,30 @@ ol.gradient-list > li + li {
   color: black;
 }
 
+.Buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.ButtonsCol {
+  text-align: center;
+  flex: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .Buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .ButtonsCol {
+    flex-basis: calc(33.33% - 10px);
+    margin: 5px;
+  }
+}
+
 .btn-pink {
   background-color: var(--yellow);
   border-color: var(--yellow);

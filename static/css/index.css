@@ -22,9 +22,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.wrapper {
-}
-
+/* SuperSlider */
 .SuperSlider {
   text-align: center;
 }
@@ -78,6 +76,7 @@ body {
   color: white;
 }
 
+/* Webcam, Original Image, Predicted Image */
 .Boxes {
   position: relative;
   top: 500px;

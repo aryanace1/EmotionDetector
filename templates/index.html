@@ -44,7 +44,7 @@
 
   <body>
     <!-- Headings -->
-    
+
     <h1 class="Title">Emotion Detector</h1>
     <h2 class="SubTitle">Slide here for some fun</h2>
 
@@ -69,6 +69,21 @@
       </div>
     </div>
 
+    <!-- Steps -->
+    <div class="Steps">
+      <h2 class="StepsTitle">How to use?</h2>
+      <ol class="gradient-list">
+        <li>Click on <span>Play</span> to start the webcam.</li>
+        <li>Click on <span>Snap</span> to take a picture of your face.</li>
+        <li>Wait for the prediction.</li>
+        <li>
+          Voila! You have your emotion displayed alongside the original
+          snapshot.
+        </li>
+        <li>Click on <span>Close</span> to stop the webcam and start again.</li>
+      </ol>
+    </div>
+
     <div class="container Boxes">
       <!-- Buttons -->
       <div class="row justify-content-center my-4">
@@ -78,13 +93,13 @@
           </button>
         </div>
         <div class="col-md-4 col-sm-6 text-center">
-          <button class="btn btn-lg btn-pink" onclick="takeSnapshot()">
-            Snap
+          <button class="btn btn-lg btn-pink" onclick="stopWebcam()">
+            Close
           </button>
         </div>
         <div class="col-md-4 col-sm-6 text-center">
-          <button class="btn btn-lg btn-pink" onclick="stopWebcam()">
-            Close
+          <button class="btn btn-lg btn-pink" onclick="takeSnapshot()">
+            Snap
           </button>
         </div>
       </div>

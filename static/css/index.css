@@ -102,6 +102,11 @@ body {
   color: var(--dark);
 }
 
+.btn-pink:hover {
+  border-color: var(--blue);
+  color: var(--yellow);
+}
+
 #videoElement {
   width: 100%;
   height: auto;

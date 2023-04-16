@@ -41,8 +41,8 @@
 
   <body>
     <!-- Headings -->
-    <div class="MyHeader">
-      <div class="text-center">
+    <div class="wrapper">
+      <div class="SuperSlider">
         <div id="left-side" class="side">
           <h1 class="title">
             Sometimes a simple header is
@@ -56,61 +56,61 @@
           </h1>
         </div>
       </div>
-    </div>
 
-    <div class="container Boxes">
-      <!-- Buttons -->
-      <div class="row justify-content-center my-4">
-        <div class="col-md-4 col-sm-6 text-center">
-          <button class="btn btn-lg btn-pink" onclick="startWebcam()">
-            Play
-          </button>
+      <div class="container Boxes">
+        <!-- Buttons -->
+        <div class="row justify-content-center my-4">
+          <div class="col-md-4 col-sm-6 text-center">
+            <button class="btn btn-lg btn-pink" onclick="startWebcam()">
+              Play
+            </button>
+          </div>
+          <div class="col-md-4 col-sm-6 text-center">
+            <button class="btn btn-lg btn-pink" onclick="stopWebcam()">
+              Close
+            </button>
+          </div>
+          <div class="col-md-4 col-sm-6 text-center">
+            <button class="btn btn-lg btn-pink" onclick="takeSnapshot()">
+              Snap
+            </button>
+          </div>
         </div>
-        <div class="col-md-4 col-sm-6 text-center">
-          <button class="btn btn-lg btn-pink" onclick="stopWebcam()">
-            Close
-          </button>
-        </div>
-        <div class="col-md-4 col-sm-6 text-center">
-          <button class="btn btn-lg btn-pink" onclick="takeSnapshot()">
-            Snap
-          </button>
-        </div>
-      </div>
 
-      <!-- Webcam -->
-      <div class="row justify-content-center my-4">
-        <div class="col-md-6 col-sm-12">
-          <div class="card text-center">
-            <div class="card-header">
-              <h4 class="my-2">Webcam</h4>
-            </div>
-            <div class="card-body">
-              <video id="videoElement" class="w-100"></video>
+        <!-- Webcam -->
+        <div class="row justify-content-center my-4">
+          <div class="col-md-6 col-sm-12">
+            <div class="card text-center">
+              <div class="card-header">
+                <h4 class="my-2">Webcam</h4>
+              </div>
+              <div class="card-body">
+                <video id="videoElement" class="w-100"></video>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Original and Predicted Images -->
-      <div class="row justify-content-center my-4">
-        <div class="col-md-6 col-sm-12">
-          <div class="card text-center">
-            <div class="card-header">
-              <h4 class="my-2">Original</h4>
-            </div>
-            <div class="card-body">
-              <div id="imageDiv"></div>
+        <!-- Original and Predicted Images -->
+        <div class="row justify-content-center my-4">
+          <div class="col-md-6 col-sm-12">
+            <div class="card text-center">
+              <div class="card-header">
+                <h4 class="my-2">Original</h4>
+              </div>
+              <div class="card-body">
+                <div id="imageDiv"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="card text-center">
-            <div class="card-header">
-              <h4 class="my-2">Predicted</h4>
-            </div>
-            <div class="card-body">
-              <div id="predictedImageDiv"></div>
+          <div class="col-md-6 col-sm-12">
+            <div class="card text-center">
+              <div class="card-header">
+                <h4 class="my-2">Predicted</h4>
+              </div>
+              <div class="card-body">
+                <div id="predictedImageDiv"></div>
+              </div>
             </div>
           </div>
         </div>

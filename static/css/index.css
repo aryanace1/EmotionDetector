@@ -22,15 +22,16 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.MyHeader {
-  background-color: var(--dark);
-  margin: 0px;
-  position: relative;
+.wrapper {
+}
+
+.SuperSlider {
+  text-align: center;
 }
 
 .side {
   display: grid;
-  height: 100vh;
+  height: 400px;
   overflow: hidden;
   place-items: center;
   position: absolute;
@@ -79,6 +80,7 @@ body {
 
 .Boxes {
   position: relative;
+  top: 500px;
 }
 
 .btn-pink {

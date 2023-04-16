@@ -22,9 +22,19 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.Title {
+  font-family: "Lobster", cursive;
+  font-size: 4rem;
+  color: var(--yellow);
+  text-align: center;
+  margin-top: 2rem;
+  text-shadow: 2px 2px var(--dark);
+}
+
 /* SuperSlider */
 .SuperSlider {
   text-align: center;
+  margin-top: 0px;
 }
 
 .side {

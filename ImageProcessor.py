@@ -5,7 +5,6 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
 from PIL import Image
-from gtts import gTTS
 
 
 def process_image(image_data):
@@ -73,21 +72,6 @@ def process_image(image_data):
 
     response = {'prediction': predicted_emotion,
                 'imageData': img_str,
-                'speech': getSpeech(predicted_emotion)
                 }
 
     return response
-
-
-def getSpeech(result_text):
-
-    language = 'en'
-    speech = gTTS(text=result_text, lang=language, slow=False)
-
-    # Save the speech to memory as bytes
-    speech_file = io.BytesIO()
-    speech.write_to_fp(speech_file)
-    speech_bytes = speech_file.getvalue()
-    speech_base64 = base64.b64encode(speech_bytes).decode('utf-8')
-
-    return speech_base64

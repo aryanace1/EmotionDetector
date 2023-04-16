@@ -8,12 +8,42 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-btn-pink {
-  background-color: #ff4b5c;
+.btn-pink {
+  background-color: #e91e63;
+  border-color: #e91e63;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.5s;
+}
+
+#videoElement {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+#imageDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#imageDiv img {
+  max-width: 50%;
+  height: auto;
+  margin-right: 20px;
+}
+
+#predictedImageDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#predictedImageDiv img {
+  max-width: 50%;
+  height: auto;
+  margin-right: 20px;
 }

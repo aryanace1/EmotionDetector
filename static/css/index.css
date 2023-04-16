@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:wght@300;400;500;700&display=swap");
+
+:root {
+  --dark: rgb(20, 20, 20);
+  --yellow: rgb(253, 216, 53);
+  --blue: rgb(98, 0, 234);
+
+  --c1: rgb(38, 70, 83);
+  --c2: rgb(42, 157, 143);
+
+  --left-color: var(--c1);
+  --right-color: var(--c2);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +20,65 @@
 
 body {
   font-family: "Poppins", sans-serif;
+}
+
+.MyHeader {
+  background-color: var(--dark);
+  margin: 0px;
+  position: relative;
+}
+
+.side {
+  display: grid;
+  height: 100vh;
+  overflow: hidden;
+  place-items: center;
+  position: absolute;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.side .title {
+  font-family: "Rubik", sans-serif;
+  font-size: 8vw;
+  margin: 0px 10vw;
+  width: 80vw;
+}
+
+.side .fancy {
+  font-family: "Lobster", cursive;
+  font-size: 1.3em;
+  line-height: 0.8em;
+}
+
+#left-side {
+  background-color: var(--left-color);
+  width: 60%;
+  z-index: 2;
+}
+
+#left-side .title {
+  color: white;
+}
+
+#left-side .fancy {
+  color: var(--right-color);
+}
+
+#right-side {
+  background-color: var(--right-color);
+}
+
+#right-side .title {
+  color: var(--dark);
+}
+
+#right-side .fancy {
+  color: white;
+}
+
+.Boxes {
+  position: relative;
 }
 
 .btn-pink {

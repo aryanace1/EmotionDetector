@@ -40,30 +40,25 @@
   </head>
 
   <body>
-    <!--
-    <h1>Emotion Detector</h1>
-    <h2>Take a picture and detect your emotion</h2>
-
-    <button onclick="startWebcam()">Play</button>
-    <button onclick="stopWebcam()">Close</button>
-    <button onclick="takeSnapshot()">Snap</button>
-    <video id="videoElement"></video>
-
-    <div id="imageDiv"></div>
-    <div id="resultDiv"></div>
-
-    <div id="predictedImageDiv"></div>
-    -->
-
-    <div class="container">
-      <!-- Headings -->
-      <div class="row">
-        <div class="col-12 text-center">
-          <h1 class="my-4">Emotion Detector</h1>
-          <h2 class="my-4">Take a picture and detect your emotion</h2>
+    <!-- Headings -->
+    <div class="MyHeader">
+      <div class="text-center">
+        <div id="left-side" class="side">
+          <h1 class="title">
+            Sometimes a simple header is
+            <span class="fancy">better</span>
+          </h1>
+        </div>
+        <div id="right-side" class="side">
+          <h1 class="title">
+            Sometimes a simple header is
+            <span class="fancy">better</span>
+          </h1>
         </div>
       </div>
+    </div>
 
+    <div class="container Boxes">
       <!-- Buttons -->
       <div class="row justify-content-center my-4">
         <div class="col-md-4 col-sm-6 text-center">
@@ -105,9 +100,7 @@
               <h4 class="my-2">Original</h4>
             </div>
             <div class="card-body">
-              <div
-                id="imageDiv"
-              ></div>
+              <div id="imageDiv"></div>
             </div>
           </div>
         </div>
@@ -117,9 +110,7 @@
               <h4 class="my-2">Predicted</h4>
             </div>
             <div class="card-body">
-              <div
-                id="predictedImageDiv"
-              ></div>
+              <div id="predictedImageDiv"></div>
             </div>
           </div>
         </div>

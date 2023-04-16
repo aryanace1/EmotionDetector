@@ -44,16 +44,17 @@
 
   <body>
     <!-- Headings -->
-
     <h1 class="Title">Emotion Detector</h1>
     <h2 class="SubTitle">Slide here for some fun</h2>
 
+    <!-- Arrow Animation -->
     <div class="arrow">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
+    <!-- Super Slider -->
     <div class="SuperSlider">
       <div id="left-side" class="side">
         <h1 class="title">
@@ -84,6 +85,7 @@
       </ol>
     </div>
 
+    <!-- Boxes -->
     <div class="container Boxes">
       <!-- Buttons -->
       <div class="row justify-content-center my-4">
@@ -123,7 +125,7 @@
         <div class="col-md-6 col-sm-12">
           <div class="card text-center">
             <div class="card-header">
-              <h4 class="my-2">Original</h4>
+              <h4 class="my-2">Original Snapshot</h4>
             </div>
             <div class="card-body">
               <div id="imageDiv"></div>
@@ -133,11 +135,49 @@
         <div class="col-md-6 col-sm-12">
           <div class="card text-center">
             <div class="card-header">
-              <h4 class="my-2">Predicted</h4>
+              <h4 class="my-2">Predicted Emotion</h4>
             </div>
             <div class="card-body">
               <div id="predictedImageDiv"></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="row About">
+      <div class="col-md-8 col-sm-12">
+        <div class="card text-center">
+          <div class="card-header">
+            <h4 class="my-2">About</h4>
+          </div>
+          <div class="card-body">
+            <p class="AboutText">
+              The Emotion Detector web application uses a machine learning model
+              to detect human emotions from facial expressions. The model is a
+              Convolutional Neural Network (CNN) trained on the FER-2013
+              dataset, which contains over 35,000 images of human faces
+              categorized into seven different emotions - angry, disgusted,
+              fearful, happy, neutral, sad, and surprised.
+            </p>
+            <p class="AboutText">
+              he web application is built using HTML, CSS, and JavaScript for
+              the front-end, and Flask for the back-end. The Flask app serves
+              the HTML templates and handles the API calls for the webcam and
+              image processing.
+            </p>
+            <p class="AboutText">
+              The machine learning model is trained and saved in a Jupyter
+              Notebook, which is then loaded into the Flask app for real-time
+              predictions. The Jupyter Notebook containing the model can be
+              accessed through this link:
+              <a
+                target="_blank"
+                href="https://github.com/Hardvan/My-Machine-Learning-Projects/blob/main/Kaggle%20Practice/11_Emotion_Detection/EmotionDetection.ipynb"
+                >Emotion Detector Jupyter Notebook</a
+              >
+            </p>
           </div>
         </div>
       </div>

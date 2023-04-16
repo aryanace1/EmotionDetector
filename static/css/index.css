@@ -26,10 +26,14 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  overflow: hidden;
 }
 
 #imageDiv img {
-  max-width: 50%;
+  max-width: 100%;
   height: auto;
   margin-right: 20px;
 }
@@ -40,10 +44,14 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  overflow: hidden;
 }
 
 #predictedImageDiv img {
-  max-width: 50%;
+  max-width: 100%;
   height: auto;
   margin-right: 20px;
 }

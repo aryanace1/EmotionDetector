@@ -48,6 +48,10 @@ function takeSnapshot() {
 
 // Send the snapshot to the Flask server.
 function sendSnapshot(imageData) {
+  // Display the loading animation
+  const loading = document.querySelector(".Spinner");
+  loading.style.display = "flex";
+
   // Send the form data to the server.
   fetch("/snapImage", {
     method: "POST",
@@ -61,6 +65,9 @@ function sendSnapshot(imageData) {
     })
     .then(function (json) {
       console.log("Prediction: " + json.prediction);
+
+      // Hide the loading animation
+      loading.style.display = "none";
 
       // Display the original image
       let image = document.querySelector("#imageDiv img");

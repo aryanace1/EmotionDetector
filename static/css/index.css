@@ -20,6 +20,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--dark);
+  color: white;
 }
 
 .Title {
@@ -28,7 +30,7 @@ body {
   color: var(--yellow);
   text-align: center;
   margin-top: 2rem;
-  text-shadow: 2px 2px var(--dark);
+  text-shadow: 2px 2px var(--blue);
 }
 
 /* SuperSlider */
@@ -52,6 +54,7 @@ body {
   font-size: 8vw;
   margin: 0px 10vw;
   width: 80vw;
+  color: white;
 }
 
 .side .fancy {
@@ -67,11 +70,11 @@ body {
 }
 
 #left-side .title {
-  color: white;
+  color: var(--dark);
 }
 
 #left-side .fancy {
-  color: var(--right-color);
+  color: white;
 }
 
 #right-side {
@@ -79,23 +82,24 @@ body {
 }
 
 #right-side .title {
-  color: var(--dark);
+  color: white;
 }
 
 #right-side .fancy {
-  color: white;
+  color: var(--dark);
 }
 
 /* Webcam, Original Image, Predicted Image */
 .Boxes {
   position: relative;
   top: 500px;
+  color: black;
 }
 
 .btn-pink {
-  background-color: #e91e63;
-  border-color: #e91e63;
-  color: #fff;
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--dark);
 }
 
 #videoElement {

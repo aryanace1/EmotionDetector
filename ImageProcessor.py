@@ -7,23 +7,22 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from PIL import Image
 
 
-face_cascade = cv2.CascadeClassifier(
-    "./static/xml/haarcascade_frontalface_default.xml")
-
-
-model = load_model("./static/models/emotion_detector_1681572728.3088243.h5")
-class_names = {
-    0: 'Anger',
-    1: 'Disgust',
-    2: 'Fear',
-    3: 'Happy',
-    4: 'Neutral',
-    5: 'Sadness',
-    6: 'Surprise'
-}
-
-
 def process_image(image_data):
+
+    face_cascade = cv2.CascadeClassifier(
+        "./static/xml/haarcascade_frontalface_default.xml")
+
+    model = load_model(
+        "./static/models/emotion_detector_1681572728.3088243.h5")
+    class_names = {
+        0: 'Anger',
+        1: 'Disgust',
+        2: 'Fear',
+        3: 'Happy',
+        4: 'Neutral',
+        5: 'Sadness',
+        6: 'Surprise'
+    }
 
     # Decode the image data
     image_data = base64.b64decode(image_data.split(',')[1])

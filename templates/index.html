@@ -40,6 +40,7 @@
   </head>
 
   <body>
+    <!--
     <h1>Emotion Detector</h1>
     <h2>Take a picture and detect your emotion</h2>
 
@@ -52,6 +53,80 @@
     <div id="resultDiv"></div>
 
     <div id="predictedImageDiv"></div>
+    -->
+
+    <div class="container">
+      <!-- Headings -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="my-4">Emotion Detector</h1>
+          <h2 class="my-4">Take a picture and detect your emotion</h2>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="row justify-content-center my-4">
+        <div class="col-md-4 col-sm-6 text-center">
+          <button class="btn btn-lg btn-pink" onclick="startWebcam()">
+            Play
+          </button>
+        </div>
+        <div class="col-md-4 col-sm-6 text-center">
+          <button class="btn btn-lg btn-pink" onclick="stopWebcam()">
+            Close
+          </button>
+        </div>
+        <div class="col-md-4 col-sm-6 text-center">
+          <button class="btn btn-lg btn-pink" onclick="takeSnapshot()">
+            Snap
+          </button>
+        </div>
+      </div>
+
+      <!-- Webcam -->
+      <div class="row justify-content-center my-4">
+        <div class="col-md-6 col-sm-12">
+          <div class="card text-center">
+            <div class="card-header">
+              <h4 class="my-2">Webcam</h4>
+            </div>
+            <div class="card-body">
+              <video id="videoElement" class="w-100"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Original and Predicted Images -->
+      <div class="row justify-content-center my-4">
+        <div class="col-md-6 col-sm-12">
+          <div class="card text-center">
+            <div class="card-header">
+              <h4 class="my-2">Original</h4>
+            </div>
+            <div class="card-body">
+              <div
+                id="imageDiv"
+                style="max-height: 400px; overflow: hidden"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="card text-center">
+            <div class="card-header">
+              <h4 class="my-2">Predicted</h4>
+            </div>
+            <div class="card-body">
+              <div
+                id="predictedImageDiv"
+                style="max-height: 400px; overflow: hidden"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Custom JS -->
     <script

@@ -100,6 +100,7 @@ body {
   background-color: var(--yellow);
   border-color: var(--yellow);
   color: var(--dark);
+  margin: 10px;
 }
 
 .btn-pink:hover {

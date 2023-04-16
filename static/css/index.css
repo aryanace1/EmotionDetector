@@ -300,6 +300,7 @@ ol.gradient-list > li + li {
   justify-content: center;
   align-items: center;
   margin: 10px;
+  margin-bottom: 20px;
 }
 
 .ButtonsCol {
@@ -318,16 +319,18 @@ ol.gradient-list > li + li {
   }
 }
 
-.btn-pink {
+.MyButton {
   background-color: var(--yellow);
   border-color: var(--yellow);
   color: var(--dark);
   margin: 10px;
+  transition: all 0.3s ease;
 }
 
-.btn-pink:hover {
+.MyButton:hover {
   border-color: var(--blue);
   color: var(--yellow);
+  background-color: var(--dark);
 }
 
 .card {

@@ -123,3 +123,17 @@ function sendSnapshot(imageData) {
       console.error("Error sending image to server: " + error);
     });
 }
+
+/* ScrollReveal Effects */
+ScrollReveal({
+  reset: true,
+  distance: "60px",
+  duration: 1250,
+  delay: 200,
+});
+
+ScrollReveal().reveal(".gradient-list li", {
+  delay: 250,
+  origin: "left",
+  interval: 100,
+});

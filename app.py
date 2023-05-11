@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from datetime import datetime
 
 # Custom imports
 import ImageProcessor
@@ -8,7 +9,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+
+    # Get current year
+    year = datetime.now().year
+
+    return render_template('index.html', year=year)
 
 
 @app.route('/snapImage', methods=['POST'])

@@ -664,6 +664,11 @@ ol.gradient-list > li + li {
   margin-top: 600px;
 }
 
+#gradient-cards > a {
+  color: white;
+  text-decoration: none;
+}
+
 .gradient-card {
   background-color: var(--card-color);
   border-radius: 0.75em;

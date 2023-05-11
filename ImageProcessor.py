@@ -37,7 +37,6 @@ def process_image(image_data):
 
     # Detect the face in the image
     faces = face_cascade.detectMultiScale(img_grey, 1.3, 5)
-
     if len(faces) == 0:
         return {'prediction': 'no face detected'}
 

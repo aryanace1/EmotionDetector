@@ -14,10 +14,13 @@ def index():
 @app.route('/snapImage', methods=['POST'])
 def snapImage():
 
+    # Get the image data from the request
     image_data = request.form.get('imageData')
 
+    # Process the image
     response = ImageProcessor.process_image(image_data)
 
+    # Return the response
     return jsonify(response)
 
 

@@ -703,15 +703,23 @@ ol.gradient-list > li + li {
 .gradient-card-title {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
   margin: 0 auto;
   margin-top: 1.5rem;
+  opacity: 0; /* Hide the content by default */
+  transition: opacity 0.3s ease-in-out; /* Add transition effect */
 }
 
 .gradient-card-description {
   font-size: 0.9rem;
   color: #666;
   margin: 0 auto;
+  opacity: 0; /* Hide the content by default */
+  transition: opacity 0.3s ease-in-out; /* Add transition effect */
+}
+
+.gradient-card:hover .gradient-card-title,
+.gradient-card:hover .gradient-card-description {
+  opacity: 1; /* Show the content on hover */
 }
 
 /* -- ↓↓ Extra styles ↓↓ -- */

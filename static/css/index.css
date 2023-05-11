@@ -624,7 +624,7 @@ ol.gradient-list > li + li {
 
 .About {
   padding: 1rem;
-  margin-top: 600px;
+  margin-top: 30px;
   justify-content: center;
 }
 
@@ -661,6 +661,7 @@ ol.gradient-list > li + li {
   width: calc(100% - 2em);
   z-index: 2;
   margin: 0 auto;
+  margin-top: 600px;
 }
 
 .gradient-card {

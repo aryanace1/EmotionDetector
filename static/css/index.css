@@ -29,6 +29,10 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .Title {
   font-family: "Lobster", cursive;
   font-size: 5rem;

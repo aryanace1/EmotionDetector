@@ -625,7 +625,9 @@ ol.gradient-list > li + li {
 .About {
   padding: 1rem;
   margin-top: 30px;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .AboutText {

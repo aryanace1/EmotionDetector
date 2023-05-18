@@ -32,6 +32,10 @@ function startWebcam() {
       stream = s; // Store the stream object to be used later.
       video.srcObject = stream; // Set the video source to the webcam stream.
       video.play(); // Play the video element to display the webcam stream.
+
+      // Set the h4 of class RecordWebcam from Webcam to Webcam 🔴
+      let webcamTitle = document.querySelector(".RecordWebcam");
+      webcamTitle.innerHTML = "Webcam 🔴";
     })
     .catch(function (err) {
       console.log("Error accessing camera: " + err);
@@ -45,6 +49,10 @@ function stopWebcam() {
     video.srcObject = null; // Set the video source to null to stop the webcam stream.
     stream.getTracks()[0].stop(); // Stop the webcam stream.
     stream = null; // Set the stream object to null to release the webcam.
+
+    // Set the h4 of class RecordWebcam from Webcam 🔴 to Webcam
+    let webcamTitle = document.querySelector(".RecordWebcam");
+    webcamTitle.innerHTML = "Webcam";
   }
 }
 

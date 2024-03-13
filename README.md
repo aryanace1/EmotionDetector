@@ -8,6 +8,10 @@ Link to my Jupyter Notebook for more details about the model: [Emotion Detector.
 - On [PythonAnywhere](https://emotiondetector.pythonanywhere.com/)
 - On [Render](https://emotiondetector-davn.onrender.com/)
 
+## Demonstration Video
+
+[![Emotion Detector](./demo/thumbnail.png)](https://youtu.be/i2bhmWC0jDM?si=hWPk-lopZy0YwifR)
+
 ## Tech Stack
 
 - HTML
